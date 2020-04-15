@@ -1,0 +1,11 @@
+[package]
+name = "micro_http-fuzz"
+version = "0.1.0"
+authors = ["George Mocanu <mocanu.geo98@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+micro_http = { path = ".." }
+afl = ">=0.7.0"

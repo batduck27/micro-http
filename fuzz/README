@@ -1,0 +1,18 @@
+* How to build:
+	cargo afl build
+
+* How to run:
+	cargo afl fuzz -i <input_dir> -o <output_dir> -x <dictionary> -t 5000 target/debug/micro_http-fuzz
+
+* Examples of input files can be found in ./in;
+* An example of a dictionary can be found in ./dictionaries;
+* The dictionary option can be ommited. This option is used to help the fuzzer to
+  generate better inputs.
+* One can resume the previous run by using -i- instead of "-i <input_dir>";
+
+* Examples:
+	This will start a new run:
+	cargo afl fuzz -i in -o out -x dictionaries/http.dict -t 5000 target/debug/micro_http-fuzz
+	
+	This will resume the previous run (will start from the generated inputs by the last run):
+	cargo afl fuzz -i- -o out -x dictionaries/http.dict -t 5000 target/debug/micro_http-fuzz
